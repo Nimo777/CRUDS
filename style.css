@@ -108,42 +108,24 @@ th,td{
 
 }
 /* mobile */
-@media (max-width: 768px) {
-    .crud {
-        margin: 10px;
-    }
 
-    .price {
+@media(max-width:768px)
+{
+    .crud{
+        margin: 20px;
+    }
+    .price{
         flex-direction: column;
     }
+    .table-container{
 
-    .buttons {
-        flex-direction: column;
-        gap: 10px;
+        overflow-x: auto;
     }
+    table{
+        min-width: 700px;
+        
+    }
+    
 
-    input {
-        height: 45px;
-        font-size: 14px;
-    }
-
-    button {
-        height: 45px;
-        font-size: 14px;
-    }
-
-    table {
-        font-size: 12px;
-    }
-
-    th,
-    td {
-        padding: 3px;
-    }
-
-    #total {
-        margin-top: 5px;
-    }
 
 }
-
