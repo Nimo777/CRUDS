@@ -1,131 +1,96 @@
-/* reset */
-*
-{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
-}
-body{
-    background-color: #222;
-    color: #fff;
-    font-family: system-ui;
-    
-}
-.crud
-{
-    margin: 20px 40px; 
-    
-}
-/* head */
-.head{
-    text-align: center;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css?v=2">
+</head>
+<body>
+    <div class="crud">
+
+        <!-- head -->
+        <div class="head">
+            <h2>CRUDS</h2>
+            <p>PRODUCT MANAGEMENT SYSTEM</p>
 
 
-input{
 
-    width: 100%;
-    height: 50px;
-    border: none;
-    outline: none;
-    background: #111;
-    margin: 5px 0;
-    border-radius: 4px;
-    padding: 5px;
-    color: #fff;
-    transition: 0.5s;
-}
-input:focus{
-    background-color: #000;
-    transform: scale(1.05);
-}
-.price{
-    display: flex;
-    flex-direction: row;
-    gap: 5px;
-}
-button{
-    width: 100%;
-    height: 50px;
-    padding: 5px;
-    color: #fff;
-    background-color: #005f73;
-    border-radius: 15px;
-    border: none;
-    transition: 0.3s;
-    cursor: pointer;
-    margin: 5px 0;
-    text-transform: capitalize;
+        </div>
+        <div class="inputs">
 
-}
-button:hover{
-    transform: scale(1.05);
-    border-top:3px solid #edf2f4 ;
-    border-bottom: 3px solid #edf2f4;
-    border-right: 3px solid #edf2f4;
-    border-left: 3px solid #edf2f4;
-    letter-spacing: 1px;
+            <input type="text" placeholder="title" name="" id="title">
+            <div class="price">
+                <input onkeyup="getTotal()" name="" placeholder="price" id="price">
+                <input onkeyup="getTotal()" name="" placeholder="taxes" id="taxes">
+                <input onkeyup="getTotal()" type="number" name="" placeholder="ads" id="ads">
+                <input onkeyup="getTotal()" type="number" name="" placeholder="discount" id="discount">
+                <small id="total"></small>
 
-}
-#total{
-    background: #0a9396;
-    height: 30px;
-    padding: 2px;
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
-    margin-top: 13px;
+            </div>
+            <input type="number" name="" placeholder="count" id="count">
+            <br>
+            <input type="text" name="" placeholder="category" id="category">
+            <br>
+            <button id="submit">create</button>
 
 
-}
-#total::before{
-    content: "Total:";
-
-}
-.buttons{
-    display: flex;
-    flex-direction: row;
-    gap: 50px;
-    
-
-}
-table{
-    width: 100%;
-    text-align: center;
-    margin: 10px 0;
-    
-}
-table th{
-    text-transform: uppercase;
-
-}
-th,td{
-    padding: 5px;
-}
-#deleteAll{
-    margin: 20px 0px;
-
-}
-/* mobile */
-
-@media(max-width:768px)
-{
-    .crud{
-        margin: 20px;
-    }
-    .price{
-        flex-direction: column;
-    }
-    .table-container{
-
-        overflow-x: auto;
-    }
-    table{
-        min-width: 700px;
-        
-    }
-    
 
 
-}
+        </div>
+        <div class="outputs">
+
+            <div class="searchBlock">
+
+                <input onkeyup="searchdata(this.value)" type="text" placeholder="search" name="" id="search">
+                <div class="buttons">
+                    <button onclick="getsearchmood(this.id)"id="searchtitle">Search By Title</button>
+                    <button onclick="getsearchmood(this.id)"id="searchcategory">Search By Categorey</button>
+
+                </div>
+
+            </div>
+            <div>
+                <div id="deleteAll"></div>
+            </div>
+            <div class="table-container">
+            <table>
+                <tr>
+                    <th>id </th>
+                    <th>title</th>
+                    <th>price</th>
+                    <th>taxes</th>
+                    <th>ads</th>
+                    <th>discount</th>
+                    <th>total</th>
+                    <th>category</th>
+                    <th>update</th>
+                    <th>delate</th>
+
+                    <tbody id="tbody">
+                        
+                    </tbody>
+                </tr>
+            
+            </table>
+            </div>
+
+
+
+
+
+
+
+        </div>
+
+
+
+
+
+
+
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
