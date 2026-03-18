@@ -30,7 +30,7 @@ function getTotal()
 let datapro;
 if(localStorage.getItem('data') != null)
 {
-    datapro = JSON.parse(localStorage.data)
+    datapro = JSON.parse(localStorage.getItem('data'))
 }
 else{
     datapro =[];
@@ -48,23 +48,22 @@ submit.onclick=function()
         count: count.value,
         category: category.value.toLowerCase(),
     }
-    if(title.value != '')
+    if(title.value != ''&& price.value != '')
     {
-        if(mood==='create')
+    if(mood==='create')
+{
+    if(newpro.count == '' || +newpro.count <= 1)
     {
-        if(newpro.count>1)
+        datapro.push(newpro);
+    }
+    else
     {
-        for(let i=0; i < newpro.count;i++)
+        for(let i=0; i < +newpro.count; i++)
         {
             datapro.push(newpro);
         }
     }
-    else
-    {
-    datapro.push(newpro);
-    }
-
-    }
+}
     else{
         datapro[temp]=newpro;
         mood='create';
