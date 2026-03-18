@@ -119,7 +119,7 @@ th,td{
     }
     .table-container{
 
-        overflow-x: auto;
+        overflow-x: scroll;
     }
     table{
         min-width: 700px;
