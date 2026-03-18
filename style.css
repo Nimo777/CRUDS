@@ -125,4 +125,7 @@ th,td{
         min-width: 700px;
         
     }
+    th{
+        font-size:12px;
+    }
 }
