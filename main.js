@@ -48,7 +48,9 @@ submit.onclick=function()
         count: count.value,
         category: category.value.toLowerCase(),
     }
-    if(mood==='create')
+    if(title.value != '')
+    {
+        if(mood==='create')
     {
         if(newpro.count>1)
     {
@@ -68,6 +70,9 @@ submit.onclick=function()
         mood='create';
         submit.innerHTML='create';
         count.style.display='block';
+
+    }
+    
 
     }
     
@@ -262,6 +267,20 @@ function searchdata(value)
 
 }
 
+// MOBILE ONLY BUTTON EFFECT
+if (window.matchMedia("(pointer: coarse)").matches) {
+    document.addEventListener('touchstart', function(e) {
+        if (e.target.tagName === 'BUTTON' || e.target.closest('button')) {
+            let btn = e.target.tagName === 'BUTTON' ? e.target : e.target.closest('button');
+            btn.style.transform = "scale(0.95)";
+            btn.style.transition = "0.1s";
+        }
+    });
 
-    
-
+    document.addEventListener('touchend', function(e) {
+        if (e.target.tagName === 'BUTTON' || e.target.closest('button')) {
+            let btn = e.target.tagName === 'BUTTON' ? e.target : e.target.closest('button');
+            btn.style.transform = "scale(1)";
+        }
+    });
+}
